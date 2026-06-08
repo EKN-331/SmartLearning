@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="description" content="Platform Belajar dan Ujian untuk Siswa SD/MI Kelas 5-6" />
+  <meta name="theme-color" content="#4361ee" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SmartLearn" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Smart Learning SD/MI</title>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loading-overlay" id="loadingScreen">
+  <div class="loading-logo">🎓</div>
+  <div class="loading-title">Smart Learning</div>
+  <p style="opacity:0.8;font-size:14px;font-weight:700;">SD/MI Kelas 5–6</p>
+  <div class="loading-dots">
+    <div class="loading-dot"></div>
+    <div class="loading-dot"></div>
+    <div class="loading-dot"></div>
+  </div>
+</div>
+
+<!-- Install Banner -->
+<div class="install-banner" id="installBanner">
+  <span style="font-size:24px">📲</span>
+  <div class="install-banner-text">
+    <div>Install Smart Learning!</div>
+    <div style="font-size:11px;opacity:0.85;">Bisa dipakai tanpa internet</div>
+  </div>
+  <button class="install-banner-btn" id="installBtn">Install</button>
+  <button style="background:none;border:none;color:white;font-size:20px;cursor:pointer;padding:4px" id="dismissInstall">✕</button>
+</div>
+
+<!-- Offline Badge -->
+<div class="offline-badge" id="offlineBadge">⚡ Mode Offline</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Star Celebration Container -->
+<div class="star-celebration" id="starCelebration"></div>
+
+<!-- Stars Background -->
+<div class="stars-bg" id="starsBg"></div>
+
+<!-- App -->
+<div id="app">
+
+  <!-- ===== HOME SCREEN ===== -->
+  <div class="screen active" id="homeScreen">
+    <div class="app-header">
+      <div class="header-top">
+        <div class="logo-area">
+          <div class="logo-icon">🎓</div>
+          <div>
+            <div class="logo-text">Smart Learning</div>
+            <div class="logo-sub">SD/MI Kelas 5–6</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="darkModeToggle" title="Dark Mode">🌙</button>
+          <button class="icon-btn" id="soundToggle" title="Sound">🔊</button>
+        </div>
+      </div>
+      <div class="header-greeting">
+        <h2>Halo, Pelajar Hebat! 👋</h2>
+        <p id="greetingDate">Semangat belajar hari ini!</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- Quick Stats -->
+      <div class="quick-stats">
+        <div class="stat-card">
+          <div class="stat-icon">📝</div>
+          <span class="stat-value" id="statExams">0</span>
+          <div class="stat-label">Ujian</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <span class="stat-value" id="statAvg">-</span>
+          <div class="stat-label">Rata-rata</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <span class="stat-value" id="statBest">-</span>
+          <div class="stat-label">Terbaik</div>
+        </div>
+      </div>
+
+      <!-- Main Menu -->
+      <div class="section-header">
+        <div class="section-title">Menu Utama 🚀</div>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-item" onclick="App.showExamSetup()" style="--item-gradient: linear-gradient(135deg,#4361ee,#7209b7)">
+          <span class="menu-icon">📋</span>
+          <div class="menu-label">Mulai Ujian</div>
+          <div class="menu-desc">Uji kemampuanmu!</div>
+        </div>
+        <div class="menu-item" onclick="App.showLearningSetup()" style="--item-gradient: linear-gradient(135deg,#06d6a0,#4cc9f0)">
+          <span class="menu-icon">📖</span>
+          <div class="menu-label">Mode Belajar</div>
+          <div class="menu-desc">Belajar santai</div>
+        </div>
+        <div class="menu-item" onclick="App.showHistory()" style="--item-gradient: linear-gradient(135deg,#ffd60a,#fb8500)">
+          <span class="menu-icon">📊</span>
+          <div class="menu-label">Hasil Ujian</div>
+          <div class="menu-desc">Lihat nilaimu</div>
+        </div>
+        <div class="menu-item" onclick="App.checkPIN('questions')" style="--item-gradient: linear-gradient(135deg,#f72585,#b5179e)">
+          <span class="menu-icon">❓</span>
+          <div class="menu-label">Kelola Soal</div>
+          <div class="menu-desc">Tambah & edit</div>
+        </div>
+        <div class="menu-item" onclick="App.checkPIN('subjects')" style="--item-gradient: linear-gradient(135deg,#4cc9f0,#4361ee)">
+          <span class="menu-icon">📚</span>
+          <div class="menu-label">Kelola Mapel</div>
+          <div class="menu-desc">Atur pelajaran</div>
+        </div>
+        <div class="menu-item" onclick="App.showSettings()" style="--item-gradient: linear-gradient(135deg,#7209b7,#560bad)">
+          <span class="menu-icon">⚙️</span>
+          <div class="menu-label">Pengaturan</div>
+          <div class="menu-desc">Konfigurasi app</div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="section-header">
+        <div class="section-title">Aktivitas Terakhir 📅</div>
+        <span class="section-link" onclick="App.showHistory()">Lihat Semua →</span>
+      </div>
+      <div id="recentActivity" class="p-16">
+        <div class="empty-state">
+          <span class="empty-emoji">📭</span>
+          <div class="empty-title">Belum ada aktivitas</div>
+          <div class="empty-desc">Mulai ujian atau mode belajar untuk melihat aktivitasmu!</div>
+        </div>
+      </div>
+
+      <div class="watermark">
+        Dibuat dengan ❤️ oleh <span>Smart Learning Team</span> • v1.0.0
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EXAM SETUP SCREEN ===== -->
+  <div class="screen" id="examSetupScreen">
+    <div class="page-header">
+      <button class="back-btn" onclick="App.showScreen('homeScreen')">←</button>
+      <div class="page-title" id="examSetupTitle">Mulai Ujian 📋</div>
+    </div>
+    <div style="padding:16px">
+      <div class="card">
+        <div class="form-group">
+          <label class="form-label">👤 Nama Siswa</label>
+          <input type="text" class="form-input" id="studentName" placeholder="Masukkan nama kamu..." />
+        </div>
+        <div class="form-group">
+          <label class="form-label">🏫 Kelas</label>
+          <select class="form-select" id="studentClass">
+            <option value="5A">Kelas 5A</option>
+            <option value="5B">Kelas 5B</option>
+            <option value="5C">Kelas 5C</option>
+            <option value="6A">Kelas 6A</option>
+            <option value="6B">Kelas 6B</option>
+            <option value="6C">Kelas 6C</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">📚 Mata Pelajaran</label>
+          <select class="form-select" id="examSubject">
+            <!-- populated dynamically -->
+          </select>
+        </div>
+        <div class="form-group" id="timerGroup">
+          <label class="form-label">⏱️ Durasi Waktu</label>
+          <select class="form-select" id="examTimer">
+            <option value="15">15 Menit</option>
+            <option value="30" selected>30 Menit</option>
+            <option value="45">45 Menit</option>
+            <option value="60">60 Menit</option>
+            <option value="custom">Kustom...</option>
+          </select>
+        </div>
+        <div class="form-group hidden" id="customTimerGroup">
+          <label class="form-label">⏱️ Waktu Kustom (menit)</label>
+          <input type="number" class="form-input" id="customTimer" placeholder="Masukkan durasi dalam menit..." min="1" max="180" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">📊 Jumlah Soal</label>
+          <select class="form-select" id="questionCount">
+            <option value="10">10 Soal</option>
+            <option value="20" selected>20 Soal</option>
+            <option value="30">30 Soal (Semua)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">🔀 Mode</label>
+          <select class="form-select" id="examMode">
+            <option value="exam">Mode Ujian (langsung dinilai)</option>
+            <option value="learning">Mode Belajar (ada pembahasan)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">📋 Mode Hasil</label>
+          <select class="form-select" id="resultMode">
+            <option value="direct">Langsung (tampil setelah selesai)</option>
+            <option value="delayed">Tertunda (guru yang membuka)</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="startExamBtn" onclick="App.startExam()">
+          🚀 Mulai Sekarang!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EXAM SCREEN ===== -->
+  <div class="screen" id="examScreen">
+    <div class="exam-header">
+      <div class="exam-info">
+        <div class="exam-subject" id="examSubjectDisplay">Matematika</div>
+        <div class="exam-progress-text" id="examProgressText">Soal 1 dari 20</div>
+      </div>
+      <div class="timer-display" id="timerDisplay">
+        <span class="timer-time" id="timerTime">30:00</span>
+        <span class="timer-label">Waktu</span>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="examProgressBar" style="width:5%"></div>
+    </div>
+
+    <!-- Question Numbers -->
+    <div style="padding:8px 16px 0; display:flex; align-items:center; justify-content:space-between;">
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted)">Nomor Soal:</div>
+      <button onclick="App.toggleQGrid()" style="background:none;border:none;font-size:12px;color:var(--primary);font-weight:700;cursor:pointer">
+        Navigasi ▼
+      </button>
+    </div>
+    <div class="question-grid" id="questionGrid" style="display:none"></div>
+
+    <!-- Question -->
+    <div class="question-card" id="questionCard">
+      <div class="q-badge">
+        <span>📋</span>
+        <span id="qBadgeText">Soal 1</span>
+      </div>
+      <div class="q-text" id="questionText">Memuat soal...</div>
+      <div class="options-list" id="optionsList"></div>
+      <div class="explanation-box" id="explanationBox">
+        <span class="explanation-label">💡 Pembahasan</span>
+        <span id="explanationText"></span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="exam-nav">
+      <button class="btn btn-secondary" id="prevBtn" onclick="App.prevQuestion()">← Sebelumnya</button>
+      <button class="btn btn-primary" id="nextBtn" onclick="App.nextQuestion()">Berikutnya →</button>
+      <button class="btn btn-success hidden" id="finishBtn" onclick="App.finishExam()">✅ Selesai</button>
+    </div>
+  </div>
+
+  <!-- ===== RESULT SCREEN ===== -->
+  <div class="screen" id="resultScreen">
+    <div class="page-header">
+      <button class="back-btn" onclick="App.showScreen('homeScreen')">←</button>
+      <div class="page-title">Hasil Ujian 🏆</div>
+      <button class="icon-btn" onclick="App.exportResultPDF()" title="Export PDF">📄</button>
+    </div>
+    <div class="result-screen">
+      <div class="result-card" id="resultCard">
+        <span class="result-emoji" id="resultEmoji">🎉</span>
+        <div class="result-score" id="resultScore">85</div>
+        <div class="result-label" id="resultLabel">Nilai Kamu</div>
+        <div class="result-stats">
+          <div class="result-stat">
+            <span class="result-stat-val" id="resultCorrect">17</span>
+            <span class="result-stat-lbl">✅ Benar</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-stat-val" id="resultWrong">3</span>
+            <span class="result-stat-lbl">❌ Salah</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-stat-val" id="resultTime">28:44</span>
+            <span class="result-stat-lbl">⏱️ Waktu</span>
+          </div>
+        </div>
+        <div class="badge-display" id="badgeDisplay"></div>
+      </div>
+
+      <div id="resultInfo" style="margin-bottom:16px"></div>
+
+      <!-- Answer Review -->
+      <div class="section-header">
+        <div class="section-title">Review Jawaban 📝</div>
+      </div>
+      <div id="answerReview"></div>
+
+      <div style="padding:0 0 16px; display:flex; flex-direction:column; gap:10px;">
+        <button class="btn btn-primary" onclick="App.showExamSetup()">🔄 Ujian Lagi</button>
+        <button class="btn btn-secondary" onclick="App.showScreen('homeScreen')">🏠 Kembali ke Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DELAYED RESULT (Teacher View) ===== -->
+  <div class="screen" id="delayedResultScreen">
+    <div class="page-header">
+      <button class="back-btn" onclick="App.showScreen('historyScreen')">←</button>
+      <div class="page-title">Hasil Tertunda 🔒</div>
+    </div>
+    <div style="padding:16px; text-align:center;">
+      <div style="font-size:80px; margin:20px 0;">🔐</div>
+      <div style="font-family:var(--font-display); font-size:22px; margin-bottom:8px; color:var(--text)">
+        Hasil Tersimpan
+      </div>
+      <p style="color:var(--text-muted); font-size:14px; margin-bottom:24px;">
+        Hasil ujian ini disimpan untuk guru. Masukkan PIN guru untuk melihat hasilnya.
+      </p>
+      <button class="btn btn-primary" onclick="App.checkPIN('delayed-result')">
+        🔓 Buka Hasil (Guru)
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== HISTORY SCREEN ===== -->
+  <div class="screen" id="historyScreen">
+    <div class="page-header">
+      <button class="back-btn" onclick="App.showScreen('homeScreen')">←</button>
+      <div class="page-title">Riwayat & Ranking 📊</div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="App.switchHistoryTab('history', this)">📋 Riwayat</button>
+      <button class="tab-btn" onclick="App.switchHistoryTab('ranking', this)">🏆 Ranking</button>
+      <button class="tab-btn" onclick="App.switchHistoryTab('stats', this)">📈 Statistik</button>
+    </div>
+
+    <div id="historyTab">
+      <div style="padding:0 16px 8px; display:flex; gap:8px; flex-wrap:wrap;">
+        <select class="form-select" id="historyFilter" onchange="App.renderHistory()" style="width:auto; padding:8px 12px; font-size:13px;">
+          <option value="">Semua Mapel</option>
+        </select>
+        <button class="btn btn-danger btn-sm" onclick="App.clearHistory()">🗑️ Hapus Semua</button>
+      </div>
+      <div id="historyList" style="padding:0 16px 16px"></div>
+    </div>
+
+    <div id="rankingTab" class="hidden">
+      <div style="padding:12px 16px 4px; display:flex; gap:8px; flex-wrap:wrap;">
+        <select class="form-select" id="rankingFilter" onchange="App.renderRanking()" style="width:auto; padding:8px 12px; font-size:13px;">
+          <option value="">Semua Mapel</option>
+        </select>
+      </div>
+      <div id="rankingList" style="padding:0 16px 16px"></div>
+    </div>
+
+    <div id="statsTab" class="hidden">
+      <div id="statsContent" style="padding:16px"></div>
+    </div>
+  </div>
+
+  <!-- ===== QUESTION MANAGEMENT ===== -->
+  <div class="screen" id="questionsScreen">
+    <div class="page-header">
+      <button class="back-btn" onclick="App.showScreen('homeScreen')">←</button>
+      <div class="page-title">Kelola Soal ❓</div>
+      <button class="icon-btn" onclick="App.showAddQuestion()" title="Tambah Soal">➕</button>
+    </div>
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="questionSearch" placeholder="Cari soal..." oninput="App.searchQuestions()" />
+    </div>
+
+    <div class="tabs" id="subjectFilterTabs"></div>
+
+    <div style="padding:0 16px 8px; display:flex; gap:8px; flex-wrap:wrap;">
+      <button class="btn btn-secondary btn-sm" onclick="App.importQuestionsJSON()">📥 JSON</button>
+      <button class="btn btn-secondary btn-sm" onclick="App.exportQuestionsJSON()">📤 JSON</button>
+      <button class="btn btn-secondary btn-sm" onclick="App.importQuestionsExcel()">📊 Import Excel</button>
+      <button class="btn btn-secondary btn-sm" onclick="App.exportQuestionsExcel()">📊 Export Excel</button>
+      <button class="btn btn-warning btn-sm" onclick="App.downloadExcelTemplate()">📋 Template Excel</button>
+    </div>
+
+    <div id="questionList" style="padding:0 16px 80px"></div>
+  </div>
+
+  <!-- ===== SUBJECT MANAGEMENT ===== -->
+  <div class="screen" id="subjectsScreen">
+    <div class="page-header">
+      <button class="back-btn" onclick="App.showScreen('homeScreen')">←</button>
+      <div class="page-title">Kelola Mapel 📚</div>
+      <button class="icon-btn" onclick="App.showAddSubject()" title="Tambah Mapel">➕</button>
+    </div>
+    <div id="subjectList" style="padding:16px"></div>
+  </div>
+
+  <!-- ===== SETTINGS SCREEN ===== -->
+  <div class="screen" id="settingsScreen">
+    <div class="page-header">
+      <button class="back-btn" onclick="App.showScreen('homeScreen')">←</button>
+      <div class="page-title">Pengaturan ⚙️</div>
+    </div>
+    <div style="padding:16px">
+      <div class="card">
+        <div class="settings-item">
+          <div>
+            <div class="settings-label">🌙 Dark Mode</div>
+            <div class="settings-desc">Tampilan gelap untuk mata</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="darkModeSwitch" onchange="App.toggleDarkMode(this.checked)" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="settings-item">
+          <div>
+            <div class="settings-label">🔊 Efek Suara</div>
+            <div class="settings-desc">Suara saat klik tombol</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="soundSwitch" onchange="App.toggleSound(this.checked)" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="settings-item">
+          <div>
+            <div class="settings-label">🎵 Musik Latar</div>
+            <div class="settings-desc">Musik selama belajar</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="musicSwitch" onchange="App.toggleMusic(this.checked)" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="settings-item">
+          <div>
+            <div class="settings-label">🔀 Acak Soal</div>
+            <div class="settings-desc">Urutan soal diacak</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="shuffleSwitch" onchange="App.toggleShuffle(this.checked)" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="settings-item">
+          <div>
+            <div class="settings-label">🔀 Acak Jawaban</div>
+            <div class="settings-desc">Urutan opsi jawaban diacak</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="shuffleAnswersSwitch" onchange="App.toggleShuffleAnswers(this.checked)" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="settings-item">
+          <div>
+            <div class="settings-label">🔑 Ubah PIN Guru</div>
+            <div class="settings-desc">PIN saat ini: ••••••</div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="App.changePIN()">Ubah</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="settings-item">
+          <div>
+            <div class="settings-label">🗑️ Reset Semua Data</div>
+            <div class="settings-desc">Khusus Admin/Guru · Perlu PIN</div>
+          </div>
+          <button class="btn btn-danger btn-sm" onclick="App.checkPIN('reset-data')">Reset</button>
+        </div>
+        <div class="settings-item">
+          <div>
+            <div class="settings-label">📥 Muat Data Default</div>
+            <div class="settings-desc">Khusus Admin/Guru · Perlu PIN</div>
+          </div>
+          <button class="btn btn-warning btn-sm" onclick="App.checkPIN('load-default')">Muat</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-family:var(--font-display);font-size:16px;margin-bottom:12px;color:var(--text)">📋 Panduan Import Excel</div>
+        <div style="font-size:12px;color:var(--text-light);font-weight:600;line-height:1.7">
+          Kolom wajib di file Excel:<br/>
+          <span style="color:var(--primary)">A: subjectId</span> (math/science/indonesian atau ID mapel)<br/>
+          <span style="color:var(--primary)">B: question</span> (teks soal)<br/>
+          <span style="color:var(--primary)">C: optionA</span> · <span style="color:var(--primary)">D: optionB</span> · <span style="color:var(--primary)">E: optionC</span> · <span style="color:var(--primary)">F: optionD</span><br/>
+          <span style="color:var(--primary)">G: answer</span> (A/B/C/D)<br/>
+          <span style="color:var(--primary)">H: explanation</span> (boleh kosong)
+        </div>
+        <button class="btn btn-secondary btn-sm" style="margin-top:10px;width:auto" onclick="App.downloadExcelTemplate()">
+          📥 Download Template Excel
+        </button>
+      </div>
+
+      <div class="watermark">
+        Smart Learning SD/MI v1.0.0<br/>
+        Dibuat dengan ❤️ untuk <span>Pendidikan Indonesia</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end #app -->
+
+<!-- ===== MODALS ===== -->
+
+<!-- PIN Modal -->
+<div class="modal-overlay" id="pinModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-body">
+      <div class="modal-title">🔑 Masukkan PIN Guru</div>
+      <div class="pin-display" id="pinDisplay">
+        <div class="pin-dot"></div><div class="pin-dot"></div>
+        <div class="pin-dot"></div><div class="pin-dot"></div>
+        <div class="pin-dot"></div><div class="pin-dot"></div>
+      </div>
+      <div class="pin-keypad">
+        <button class="pin-key" onclick="App.pinInput('1')">1</button>
+        <button class="pin-key" onclick="App.pinInput('2')">2</button>
+        <button class="pin-key" onclick="App.pinInput('3')">3</button>
+        <button class="pin-key" onclick="App.pinInput('4')">4</button>
+        <button class="pin-key" onclick="App.pinInput('5')">5</button>
+        <button class="pin-key" onclick="App.pinInput('6')">6</button>
+        <button class="pin-key" onclick="App.pinInput('7')">7</button>
+        <button class="pin-key" onclick="App.pinInput('8')">8</button>
+        <button class="pin-key" onclick="App.pinInput('9')">9</button>
+        <button class="pin-key" onclick="App.pinClear()" style="font-size:14px;font-family:var(--font-main);font-weight:700">Hapus</button>
+        <button class="pin-key" onclick="App.pinInput('0')">0</button>
+        <button class="pin-key" onclick="App.pinSubmit()" style="background:var(--gradient-primary);color:white;border:none;font-size:14px;font-family:var(--font-main);font-weight:700">OK ✓</button>
+      </div>
+      <button class="btn btn-secondary" onclick="App.closeModal('pinModal')">Batal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add/Edit Question Modal -->
+<div class="modal-overlay" id="questionModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-body">
+      <div class="modal-title" id="questionModalTitle">➕ Tambah Soal</div>
+      <input type="hidden" id="editQuestionId" />
+      <input type="hidden" id="qImageData" />
+      <div class="form-group">
+        <label class="form-label">📚 Mata Pelajaran</label>
+        <select class="form-select" id="qSubjectSelect"></select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">❓ Teks Soal</label>
+        <textarea class="form-textarea" id="qText" placeholder="Tuliskan soal di sini..."></textarea>
+      </div>
+      <!-- IMAGE UPLOAD -->
+      <div class="form-group">
+        <label class="form-label">🖼️ Gambar Soal (opsional)</label>
+        <div id="qImagePreviewWrap" style="display:none;margin-bottom:8px;position:relative;">
+          <img id="qImagePreview" src="" alt="Preview" style="width:100%;max-height:180px;object-fit:contain;border-radius:12px;border:2px solid var(--border);background:var(--bg);" />
+          <button onclick="App.removeQuestionImage()" style="position:absolute;top:6px;right:6px;background:var(--red);color:white;border:none;border-radius:50%;width:28px;height:28px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+        </div>
+        <label for="qImageFile" class="btn btn-secondary btn-sm" style="cursor:pointer;display:inline-flex;width:auto;">
+          📁 Pilih Gambar
+        </label>
+        <input type="file" id="qImageFile" accept="image/*" style="display:none;" onchange="App.handleQuestionImage(this)" />
+        <div style="font-size:11px;color:var(--text-muted);margin-top:4px;font-weight:600;">Format: JPG, PNG, GIF, WebP. Maks 2MB.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">🅰️ Pilihan A</label>
+        <input type="text" class="form-input" id="qOptionA" placeholder="Pilihan A..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">🅱️ Pilihan B</label>
+        <input type="text" class="form-input" id="qOptionB" placeholder="Pilihan B..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">🅾️ Pilihan C</label>
+        <input type="text" class="form-input" id="qOptionC" placeholder="Pilihan C..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">🔵 Pilihan D</label>
+        <input type="text" class="form-input" id="qOptionD" placeholder="Pilihan D..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">✅ Jawaban Benar</label>
+        <select class="form-select" id="qAnswer">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">💡 Pembahasan</label>
+        <textarea class="form-textarea" id="qExplanation" placeholder="Penjelasan jawaban..."></textarea>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-primary" onclick="App.saveQuestion()">💾 Simpan</button>
+        <button class="btn btn-secondary" onclick="App.closeModal('questionModal')">Batal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add/Edit Subject Modal -->
+<div class="modal-overlay" id="subjectModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-body">
+      <div class="modal-title" id="subjectModalTitle">➕ Tambah Mapel</div>
+      <input type="hidden" id="editSubjectId" />
+      <div class="form-group">
+        <label class="form-label">📚 Nama Mapel</label>
+        <input type="text" class="form-input" id="subjectName" placeholder="Nama mata pelajaran..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">🎨 Emoji / Icon</label>
+        <input type="text" class="form-input" id="subjectIcon" placeholder="Contoh: 🔢" maxlength="4" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">🎨 Warna</label>
+        <input type="color" class="form-input" id="subjectColor" value="#4361ee" style="height:50px;cursor:pointer" />
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-primary" onclick="App.saveSubject()">💾 Simpan</button>
+        <button class="btn btn-secondary" onclick="App.closeModal('subjectModal')">Batal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Change PIN Modal -->
+<div class="modal-overlay" id="changePINModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-body">
+      <div class="modal-title">🔑 Ubah PIN Guru</div>
+      <div class="form-group">
+        <label class="form-label">PIN Lama</label>
+        <input type="password" class="form-input" id="oldPIN" placeholder="Masukkan PIN lama..." maxlength="6" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">PIN Baru (6 digit)</label>
+        <input type="password" class="form-input" id="newPIN" placeholder="Masukkan PIN baru..." maxlength="6" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Konfirmasi PIN Baru</label>
+        <input type="password" class="form-input" id="confirmPIN" placeholder="Ulangi PIN baru..." maxlength="6" />
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-primary" onclick="App.savePIN()">💾 Simpan</button>
+        <button class="btn btn-secondary" onclick="App.closeModal('changePINModal')">Batal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-body">
+      <div style="text-align:center; margin-bottom:16px;">
+        <span style="font-size:48px" id="confirmEmoji">⚠️</span>
+        <div class="modal-title" id="confirmTitle" style="margin:12px 0 8px">Konfirmasi</div>
+        <p style="font-size:14px; color:var(--text-muted)" id="confirmMessage">Apakah kamu yakin?</p>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-danger" id="confirmYes" onclick="">Ya, Lanjutkan</button>
+        <button class="btn btn-secondary" onclick="App.closeModal('confirmModal')">Batal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden Excel file input -->
+<input type="file" id="excelFileInput" accept=".xlsx,.xls,.csv" style="display:none;" onchange="App.processExcelFile(this)" />
+
+<!-- Excel Template Info Modal -->
+<div class="modal-overlay" id="excelTemplateModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-body">
+      <div class="modal-title">📋 Kerangka Import Excel</div>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table style="width:100%;border-collapse:collapse;font-size:11px;min-width:520px;">
+          <thead>
+            <tr style="background:var(--gradient-primary);color:white;">
+              <th style="padding:8px 6px;text-align:left;border-radius:8px 0 0 0;">A<br/>subjectId</th>
+              <th style="padding:8px 6px;text-align:left;">B<br/>question</th>
+              <th style="padding:8px 6px;text-align:left;">C<br/>optionA</th>
+              <th style="padding:8px 6px;text-align:left;">D<br/>optionB</th>
+              <th style="padding:8px 6px;text-align:left;">E<br/>optionC</th>
+              <th style="padding:8px 6px;text-align:left;">F<br/>optionD</th>
+              <th style="padding:8px 6px;text-align:left;">G<br/>answer</th>
+              <th style="padding:8px 6px;text-align:left;border-radius:0 8px 0 0;">H<br/>explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:var(--bg);">
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);font-weight:700;color:var(--primary)">math</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);font-weight:600;">2 + 2 = ?</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">2</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">3</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">4</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">5</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);font-weight:700;color:var(--green);">C</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">2+2=4</td>
+            </tr>
+            <tr style="background:var(--bg-card);">
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);font-weight:700;color:var(--primary)">science</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);font-weight:600;">Planet terdekat?</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">Venus</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">Bumi</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">Merkurius</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">Mars</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);font-weight:700;color:var(--green);">C</td>
+              <td style="padding:8px 6px;border-bottom:1px solid var(--border);">Merkurius paling dekat matahari</td>
+            </tr>
+            <tr style="background:var(--bg);">
+              <td style="padding:8px 6px;font-weight:700;color:var(--primary)">indonesian</td>
+              <td style="padding:8px 6px;font-weight:600;">Sinonim "rajin"?</td>
+              <td style="padding:8px 6px;">Malas</td>
+              <td style="padding:8px 6px;">Tekun</td>
+              <td style="padding:8px 6px;">Lambat</td>
+              <td style="padding:8px 6px;">Lemah</td>
+              <td style="padding:8px 6px;font-weight:700;color:var(--green);">B</td>
+              <td style="padding:8px 6px;">Rajin = Tekun</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:rgba(67,97,238,0.07);border-radius:12px;padding:12px;margin-bottom:16px;font-size:12px;font-weight:600;color:var(--text-light);line-height:1.7;">
+        <b style="color:var(--primary)">📌 Catatan Penting:</b><br/>
+        • Baris pertama adalah <b>header</b> (nama kolom) — tidak diimpor<br/>
+        • Kolom A: isi dengan ID mapel (<b>math</b>, <b>science</b>, <b>indonesian</b> atau ID mapel kustom)<br/>
+        • Kolom G: isi hanya <b>A</b>, <b>B</b>, <b>C</b>, atau <b>D</b> (huruf kapital)<br/>
+        • Kolom H (explanation) boleh dikosongkan<br/>
+        • File harus format <b>.xlsx</b> atau <b>.csv</b><br/>
+        • Soal bergambar hanya bisa ditambah manual melalui form
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-primary" onclick="App.downloadExcelTemplate();App.closeModal('excelTemplateModal')">
+          📥 Download Template .xlsx
+        </button>
+        <button class="btn btn-secondary" onclick="App.closeModal('excelTemplateModal')">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

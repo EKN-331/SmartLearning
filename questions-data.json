@@ -1,0 +1,696 @@
+{
+  "subjects": [
+    { "id": "math", "name": "Matematika", "icon": "🔢", "color": "#FF6B6B" },
+    { "id": "science", "name": "IPA", "icon": "🔬", "color": "#4ECDC4" },
+    { "id": "indonesian", "name": "Bahasa Indonesia", "icon": "📚", "color": "#45B7D1" }
+  ],
+  "questions": [
+    {
+      "id": "m1", "subjectId": "math",
+      "question": "Hasil dari 3/4 + 1/2 adalah ...",
+      "options": ["A. 1/6", "B. 5/4", "C. 4/6", "D. 1/4"],
+      "answer": "B",
+      "explanation": "3/4 + 1/2 = 3/4 + 2/4 = 5/4. Penyebut disamakan dulu menjadi 4, lalu 3+2=5, jadi 5/4."
+    },
+    {
+      "id": "m2", "subjectId": "math",
+      "question": "Nilai dari 2/3 × 3/4 adalah ...",
+      "options": ["A. 6/12", "B. 1/2", "C. 5/7", "D. 2/7"],
+      "answer": "B",
+      "explanation": "2/3 × 3/4 = (2×3)/(3×4) = 6/12 = 1/2. Pembilang dikalikan pembilang, penyebut dikalikan penyebut, lalu disederhanakan."
+    },
+    {
+      "id": "m3", "subjectId": "math",
+      "question": "Desimal dari 3/4 adalah ...",
+      "options": ["A. 0,50", "B. 0,80", "C. 0,75", "D. 0,25"],
+      "answer": "C",
+      "explanation": "3/4 = 3 ÷ 4 = 0,75. Jika membagi 3 dengan 4, hasilnya adalah 0,75."
+    },
+    {
+      "id": "m4", "subjectId": "math",
+      "question": "25% dari 200 adalah ...",
+      "options": ["A. 25", "B. 75", "C. 50", "D. 100"],
+      "answer": "C",
+      "explanation": "25% dari 200 = 25/100 × 200 = 5000/100 = 50. Persen berarti per seratus."
+    },
+    {
+      "id": "m5", "subjectId": "math",
+      "question": "Volume kubus dengan panjang sisi 5 cm adalah ...",
+      "options": ["A. 25 cm³", "B. 100 cm³", "C. 125 cm³", "D. 150 cm³"],
+      "answer": "C",
+      "explanation": "Volume kubus = sisi × sisi × sisi = 5³ = 5 × 5 × 5 = 125 cm³."
+    },
+    {
+      "id": "m6", "subjectId": "math",
+      "question": "Luas persegi panjang dengan panjang 8 cm dan lebar 5 cm adalah ...",
+      "options": ["A. 13 cm²", "B. 26 cm²", "C. 40 cm²", "D. 45 cm²"],
+      "answer": "C",
+      "explanation": "Luas persegi panjang = panjang × lebar = 8 × 5 = 40 cm²."
+    },
+    {
+      "id": "m7", "subjectId": "math",
+      "question": "Keliling persegi dengan sisi 7 cm adalah ...",
+      "options": ["A. 14 cm", "B. 21 cm", "C. 28 cm", "D. 49 cm"],
+      "answer": "C",
+      "explanation": "Keliling persegi = 4 × sisi = 4 × 7 = 28 cm."
+    },
+    {
+      "id": "m8", "subjectId": "math",
+      "question": "FPB dari 12 dan 18 adalah ...",
+      "options": ["A. 3", "B. 6", "C. 9", "D. 12"],
+      "answer": "B",
+      "explanation": "Faktor 12: 1,2,3,4,6,12. Faktor 18: 1,2,3,6,9,18. FPB = 6 (faktor terbesar yang sama)."
+    },
+    {
+      "id": "m9", "subjectId": "math",
+      "question": "KPK dari 4 dan 6 adalah ...",
+      "options": ["A. 12", "B. 24", "C. 6", "D. 18"],
+      "answer": "A",
+      "explanation": "Kelipatan 4: 4,8,12,16... Kelipatan 6: 6,12,18... KPK = 12 (kelipatan terkecil yang sama)."
+    },
+    {
+      "id": "m10", "subjectId": "math",
+      "question": "Hasil dari 1.250 ÷ 25 adalah ...",
+      "options": ["A. 40", "B. 50", "C. 60", "D. 70"],
+      "answer": "B",
+      "explanation": "1.250 ÷ 25 = 50. Kita dapat membagi 1250 dengan 25 dengan cara 25 × 50 = 1250."
+    },
+    {
+      "id": "m11", "subjectId": "math",
+      "question": "Skala peta 1:500.000. Jarak pada peta 3 cm, maka jarak sebenarnya adalah ...",
+      "options": ["A. 1,5 km", "B. 15 km", "C. 150 km", "D. 1500 km"],
+      "answer": "B",
+      "explanation": "Jarak sebenarnya = jarak peta × skala = 3 cm × 500.000 = 1.500.000 cm = 15 km."
+    },
+    {
+      "id": "m12", "subjectId": "math",
+      "question": "Volume balok dengan panjang 6 cm, lebar 4 cm, tinggi 3 cm adalah ...",
+      "options": ["A. 36 cm³", "B. 48 cm³", "C. 72 cm³", "D. 84 cm³"],
+      "answer": "C",
+      "explanation": "Volume balok = p × l × t = 6 × 4 × 3 = 72 cm³."
+    },
+    {
+      "id": "m13", "subjectId": "math",
+      "question": "0,5 + 0,75 = ...",
+      "options": ["A. 0,25", "B. 1,00", "C. 1,25", "D. 1,50"],
+      "answer": "C",
+      "explanation": "0,5 + 0,75 = 1,25. Jumlahkan seperti penjumlahan biasa dengan memperhatikan koma desimal."
+    },
+    {
+      "id": "m14", "subjectId": "math",
+      "question": "Berapa persen dari 150 adalah 30?",
+      "options": ["A. 15%", "B. 20%", "C. 25%", "D. 30%"],
+      "answer": "B",
+      "explanation": "Persentase = (30/150) × 100% = 0,2 × 100% = 20%."
+    },
+    {
+      "id": "m15", "subjectId": "math",
+      "question": "Luas segitiga dengan alas 10 cm dan tinggi 6 cm adalah ...",
+      "options": ["A. 16 cm²", "B. 30 cm²", "C. 60 cm²", "D. 120 cm²"],
+      "answer": "B",
+      "explanation": "Luas segitiga = (1/2) × alas × tinggi = (1/2) × 10 × 6 = 30 cm²."
+    },
+    {
+      "id": "m16", "subjectId": "math",
+      "question": "FPB dari 24 dan 36 adalah ...",
+      "options": ["A. 6", "B. 8", "C. 12", "D. 18"],
+      "answer": "C",
+      "explanation": "Faktor 24: 1,2,3,4,6,8,12,24. Faktor 36: 1,2,3,4,6,9,12,18,36. FPB = 12."
+    },
+    {
+      "id": "m17", "subjectId": "math",
+      "question": "KPK dari 3, 4, dan 6 adalah ...",
+      "options": ["A. 6", "B. 12", "C. 18", "D. 24"],
+      "answer": "B",
+      "explanation": "KPK dari 3, 4, dan 6. Kelipatan 3: 3,6,9,12... Kelipatan 4: 4,8,12... Kelipatan 6: 6,12... KPK = 12."
+    },
+    {
+      "id": "m18", "subjectId": "math",
+      "question": "Hasil dari 7/8 - 1/4 adalah ...",
+      "options": ["A. 6/4", "B. 5/8", "C. 3/4", "D. 1/2"],
+      "answer": "B",
+      "explanation": "7/8 - 1/4 = 7/8 - 2/8 = 5/8. Samakan penyebut menjadi 8, lalu 7-2=5."
+    },
+    {
+      "id": "m19", "subjectId": "math",
+      "question": "Bilangan bulat terkecil yang dapat dibagi oleh 5 dan 7 adalah ...",
+      "options": ["A. 12", "B. 25", "C. 35", "D. 70"],
+      "answer": "C",
+      "explanation": "KPK dari 5 dan 7 = 5 × 7 = 35 (karena 5 dan 7 adalah bilangan prima yang berbeda)."
+    },
+    {
+      "id": "m20", "subjectId": "math",
+      "question": "1,5 × 2,4 = ...",
+      "options": ["A. 3,0", "B. 3,2", "C. 3,4", "D. 3,6"],
+      "answer": "D",
+      "explanation": "1,5 × 2,4 = 3,6. Kalikan 15 × 24 = 360, lalu beri 2 angka desimal: 3,60 = 3,6."
+    },
+    {
+      "id": "m21", "subjectId": "math",
+      "question": "Keliling lingkaran dengan jari-jari 7 cm adalah ... (π = 22/7)",
+      "options": ["A. 22 cm", "B. 44 cm", "C. 154 cm", "D. 308 cm"],
+      "answer": "B",
+      "explanation": "Keliling lingkaran = 2 × π × r = 2 × 22/7 × 7 = 2 × 22 = 44 cm."
+    },
+    {
+      "id": "m22", "subjectId": "math",
+      "question": "Luas lingkaran dengan jari-jari 7 cm adalah ... (π = 22/7)",
+      "options": ["A. 44 cm²", "B. 77 cm²", "C. 154 cm²", "D. 616 cm²"],
+      "answer": "C",
+      "explanation": "Luas lingkaran = π × r² = 22/7 × 7² = 22/7 × 49 = 22 × 7 = 154 cm²."
+    },
+    {
+      "id": "m23", "subjectId": "math",
+      "question": "Jika sebuah mobil menempuh 240 km dalam 3 jam, kecepatan rata-ratanya adalah ...",
+      "options": ["A. 60 km/jam", "B. 70 km/jam", "C. 80 km/jam", "D. 90 km/jam"],
+      "answer": "C",
+      "explanation": "Kecepatan = jarak ÷ waktu = 240 ÷ 3 = 80 km/jam."
+    },
+    {
+      "id": "m24", "subjectId": "math",
+      "question": "Nilai dari 4² + 3² = ...",
+      "options": ["A. 7", "B. 14", "C. 25", "D. 49"],
+      "answer": "C",
+      "explanation": "4² = 16, 3² = 9. 16 + 9 = 25."
+    },
+    {
+      "id": "m25", "subjectId": "math",
+      "question": "Bentuk persen dari 0,35 adalah ...",
+      "options": ["A. 3,5%", "B. 35%", "C. 350%", "D. 0,35%"],
+      "answer": "B",
+      "explanation": "0,35 = 35/100 = 35%. Kalikan dengan 100 untuk mengubah desimal ke persen."
+    },
+    {
+      "id": "m26", "subjectId": "math",
+      "question": "Sebuah ember berisi 12 liter air. Jika 1/3 bagian tumpah, air yang tersisa adalah ...",
+      "options": ["A. 4 liter", "B. 6 liter", "C. 8 liter", "D. 9 liter"],
+      "answer": "C",
+      "explanation": "Air yang tumpah = 1/3 × 12 = 4 liter. Air tersisa = 12 - 4 = 8 liter."
+    },
+    {
+      "id": "m27", "subjectId": "math",
+      "question": "Keliling segitiga dengan sisi 5 cm, 7 cm, dan 8 cm adalah ...",
+      "options": ["A. 15 cm", "B. 20 cm", "C. 25 cm", "D. 30 cm"],
+      "answer": "B",
+      "explanation": "Keliling segitiga = jumlah semua sisi = 5 + 7 + 8 = 20 cm."
+    },
+    {
+      "id": "m28", "subjectId": "math",
+      "question": "Jika panjang = 9 cm dan lebar = 4 cm, keliling persegi panjang adalah ...",
+      "options": ["A. 13 cm", "B. 26 cm", "C. 36 cm", "D. 52 cm"],
+      "answer": "B",
+      "explanation": "Keliling persegi panjang = 2 × (panjang + lebar) = 2 × (9 + 4) = 2 × 13 = 26 cm."
+    },
+    {
+      "id": "m29", "subjectId": "math",
+      "question": "Hasil dari √144 adalah ...",
+      "options": ["A. 10", "B. 11", "C. 12", "D. 14"],
+      "answer": "C",
+      "explanation": "√144 = 12, karena 12 × 12 = 144."
+    },
+    {
+      "id": "m30", "subjectId": "math",
+      "question": "Sebuah pipa mengalirkan air 5 liter per menit. Berapa liter air yang mengalir dalam 1 jam?",
+      "options": ["A. 100 liter", "B. 200 liter", "C. 300 liter", "D. 600 liter"],
+      "answer": "C",
+      "explanation": "1 jam = 60 menit. Volume = 5 liter/menit × 60 menit = 300 liter."
+    },
+
+    {
+      "id": "s1", "subjectId": "science",
+      "question": "Organ tubuh manusia yang berfungsi untuk memompa darah ke seluruh tubuh adalah ...",
+      "options": ["A. Paru-paru", "B. Hati", "C. Jantung", "D. Ginjal"],
+      "answer": "C",
+      "explanation": "Jantung adalah organ yang berfungsi sebagai pompa untuk mengalirkan darah ke seluruh tubuh melalui pembuluh darah."
+    },
+    {
+      "id": "s2", "subjectId": "science",
+      "question": "Organ pernapasan manusia yang utama adalah ...",
+      "options": ["A. Jantung", "B. Paru-paru", "C. Hidung", "D. Tenggorokan"],
+      "answer": "B",
+      "explanation": "Paru-paru adalah organ pernapasan utama yang berfungsi untuk pertukaran gas oksigen dan karbondioksida."
+    },
+    {
+      "id": "s3", "subjectId": "science",
+      "question": "Proses tumbuhan membuat makanan sendiri dengan bantuan cahaya matahari disebut ...",
+      "options": ["A. Respirasi", "B. Transpirasi", "C. Fotosintesis", "D. Fermentasi"],
+      "answer": "C",
+      "explanation": "Fotosintesis adalah proses pembuatan makanan pada tumbuhan menggunakan cahaya matahari, air, dan karbondioksida untuk menghasilkan glukosa dan oksigen."
+    },
+    {
+      "id": "s4", "subjectId": "science",
+      "question": "Planet yang paling dekat dengan matahari adalah ...",
+      "options": ["A. Venus", "B. Bumi", "C. Merkurius", "D. Mars"],
+      "answer": "C",
+      "explanation": "Merkurius adalah planet pertama dan terdekat dari matahari dalam tata surya kita."
+    },
+    {
+      "id": "s5", "subjectId": "science",
+      "question": "Gaya yang menarik semua benda ke pusat bumi disebut ...",
+      "options": ["A. Gaya gesek", "B. Gaya gravitasi", "C. Gaya magnet", "D. Gaya pegas"],
+      "answer": "B",
+      "explanation": "Gaya gravitasi adalah gaya tarik-menarik antara benda-benda bermassa, khususnya gaya tarik bumi yang menarik semua benda ke arah pusatnya."
+    },
+    {
+      "id": "s6", "subjectId": "science",
+      "question": "Perubahan air menjadi uap air disebut ...",
+      "options": ["A. Membeku", "B. Mencair", "C. Menguap", "D. Mengembun"],
+      "answer": "C",
+      "explanation": "Menguap adalah perubahan wujud zat dari cair menjadi gas/uap. Air yang dipanaskan akan menguap menjadi uap air."
+    },
+    {
+      "id": "s7", "subjectId": "science",
+      "question": "Ekosistem yang terdiri dari makhluk hidup di lautan disebut ekosistem ...",
+      "options": ["A. Darat", "B. Air tawar", "C. Laut", "D. Hutan"],
+      "answer": "C",
+      "explanation": "Ekosistem laut adalah ekosistem perairan yang mencakup semua organisme dan lingkungan di laut, termasuk samudera, laut, dan teluk."
+    },
+    {
+      "id": "s8", "subjectId": "science",
+      "question": "Hewan yang termasuk kelompok mamalia adalah ...",
+      "options": ["A. Ular", "B. Buaya", "C. Katak", "D. Lumba-lumba"],
+      "answer": "D",
+      "explanation": "Lumba-lumba adalah mamalia laut yang menyusui anaknya. Ciri mamalia: berdarah panas, berbulu/rambut, melahirkan anak, menyusui."
+    },
+    {
+      "id": "s9", "subjectId": "science",
+      "question": "Bagian bunga yang merupakan alat kelamin betina adalah ...",
+      "options": ["A. Benang sari", "B. Putik", "C. Kelopak", "D. Mahkota"],
+      "answer": "B",
+      "explanation": "Putik adalah alat kelamin betina pada bunga. Di dalam putik terdapat bakal biji yang jika dibuahi akan menjadi biji."
+    },
+    {
+      "id": "s10", "subjectId": "science",
+      "question": "Energi yang tersimpan dalam makanan merupakan bentuk energi ...",
+      "options": ["A. Kinetik", "B. Potensial", "C. Listrik", "D. Kimia"],
+      "answer": "D",
+      "explanation": "Energi kimia adalah energi yang tersimpan dalam ikatan kimia suatu zat, termasuk makanan, bahan bakar, dan baterai."
+    },
+    {
+      "id": "s11", "subjectId": "science",
+      "question": "Lapisan terluar bumi disebut ...",
+      "options": ["A. Inti bumi", "B. Mantel bumi", "C. Kerak bumi", "D. Magma"],
+      "answer": "C",
+      "explanation": "Kerak bumi adalah lapisan terluar bumi yang padat dan keras, tempat kita tinggal. Di bawahnya terdapat mantel dan inti bumi."
+    },
+    {
+      "id": "s12", "subjectId": "science",
+      "question": "Hewan yang mengalami metamorfosis sempurna adalah ...",
+      "options": ["A. Belalang", "B. Kecoa", "C. Kupu-kupu", "D. Jangkrik"],
+      "answer": "C",
+      "explanation": "Kupu-kupu mengalami metamorfosis sempurna: telur → ulat/larva → kepompong/pupa → kupu-kupu dewasa (imago)."
+    },
+    {
+      "id": "s13", "subjectId": "science",
+      "question": "Zat yang dibutuhkan tumbuhan untuk fotosintesis adalah ...",
+      "options": ["A. Oksigen dan air", "B. CO₂ dan air", "C. Oksigen dan glukosa", "D. CO₂ dan oksigen"],
+      "answer": "B",
+      "explanation": "Tumbuhan membutuhkan karbondioksida (CO₂) dan air (H₂O) untuk fotosintesis, dengan bantuan cahaya matahari, menghasilkan glukosa dan oksigen."
+    },
+    {
+      "id": "s14", "subjectId": "science",
+      "question": "Sistem peredaran darah manusia terdiri dari jantung, pembuluh darah, dan ...",
+      "options": ["A. Paru-paru", "B. Darah", "C. Ginjal", "D. Hati"],
+      "answer": "B",
+      "explanation": "Sistem peredaran darah terdiri dari tiga komponen utama: jantung (pompa), pembuluh darah (saluran), dan darah (media pengangkut)."
+    },
+    {
+      "id": "s15", "subjectId": "science",
+      "question": "Planet terbesar dalam tata surya adalah ...",
+      "options": ["A. Saturnus", "B. Neptunus", "C. Uranus", "D. Jupiter"],
+      "answer": "D",
+      "explanation": "Jupiter adalah planet terbesar dalam tata surya kita. Diameternya sekitar 11 kali diameter Bumi."
+    },
+    {
+      "id": "s16", "subjectId": "science",
+      "question": "Perubahan es menjadi air disebut ...",
+      "options": ["A. Membeku", "B. Mencair", "C. Menguap", "D. Menyublim"],
+      "answer": "B",
+      "explanation": "Mencair adalah perubahan wujud zat dari padat menjadi cair. Contohnya es batu yang dibiarkan pada suhu ruang akan mencair menjadi air."
+    },
+    {
+      "id": "s17", "subjectId": "science",
+      "question": "Organ yang menyaring darah dan menghasilkan urine adalah ...",
+      "options": ["A. Hati", "B. Jantung", "C. Ginjal", "D. Usus"],
+      "answer": "C",
+      "explanation": "Ginjal adalah organ yang berfungsi menyaring darah dari zat sisa metabolisme dan menghasilkan urine untuk dikeluarkan dari tubuh."
+    },
+    {
+      "id": "s18", "subjectId": "science",
+      "question": "Perpindahan panas melalui zat cair atau gas disebut ...",
+      "options": ["A. Konduksi", "B. Konveksi", "C. Radiasi", "D. Induksi"],
+      "answer": "B",
+      "explanation": "Konveksi adalah perpindahan panas yang disertai perpindahan zat perantaranya (fluida/cairan/gas). Contoh: air mendidih dalam panci."
+    },
+    {
+      "id": "s19", "subjectId": "science",
+      "question": "Rantai makanan yang benar adalah ...",
+      "options": [
+        "A. Padi → Elang → Tikus",
+        "B. Padi → Tikus → Elang",
+        "C. Elang → Tikus → Padi",
+        "D. Tikus → Padi → Elang"
+      ],
+      "answer": "B",
+      "explanation": "Rantai makanan dimulai dari produsen (tumbuhan). Urutan yang benar: Padi (produsen) → Tikus (konsumen I) → Elang (konsumen II)."
+    },
+    {
+      "id": "s20", "subjectId": "science",
+      "question": "Gerhana matahari terjadi ketika ...",
+      "options": [
+        "A. Bumi berada di antara matahari dan bulan",
+        "B. Bulan berada di antara matahari dan bumi",
+        "C. Matahari berada di antara bumi dan bulan",
+        "D. Bumi dan bulan sejajar"
+      ],
+      "answer": "B",
+      "explanation": "Gerhana matahari terjadi ketika Bulan berada di antara Matahari dan Bumi, sehingga bayangan Bulan jatuh ke permukaan Bumi."
+    },
+    {
+      "id": "s21", "subjectId": "science",
+      "question": "Bunyi dihasilkan oleh benda yang ...",
+      "options": ["A. Diam", "B. Bergetar", "C. Bercahaya", "D. Berpindah"],
+      "answer": "B",
+      "explanation": "Bunyi dihasilkan dari getaran benda. Getaran tersebut merambat melalui medium (udara, air, atau benda padat) hingga sampai ke telinga."
+    },
+    {
+      "id": "s22", "subjectId": "science",
+      "question": "Tumbuhan pemakan serangga adalah ...",
+      "options": ["A. Mawar", "B. Melati", "C. Venus flytrap", "D. Anggrek"],
+      "answer": "C",
+      "explanation": "Venus flytrap (Dionaea muscipula) adalah tumbuhan karnivora yang memakan serangga untuk mendapatkan nutrisi yang tidak tersedia di tanah miskin hara."
+    },
+    {
+      "id": "s23", "subjectId": "science",
+      "question": "Sumber energi terbarukan yang memanfaatkan sinar matahari adalah ...",
+      "options": ["A. Batu bara", "B. Minyak bumi", "C. Panel surya", "D. Gas alam"],
+      "answer": "C",
+      "explanation": "Panel surya (solar panel) mengubah energi cahaya matahari menjadi energi listrik. Matahari adalah sumber energi yang terbarukan dan ramah lingkungan."
+    },
+    {
+      "id": "s24", "subjectId": "science",
+      "question": "Proses penyebaran biji oleh angin disebut ...",
+      "options": ["A. Hidrokori", "B. Zookori", "C. Anemokori", "D. Antropokori"],
+      "answer": "C",
+      "explanation": "Anemokori adalah penyebaran biji dengan bantuan angin. Contoh: biji dandelion, biji pinus yang memiliki sayap ringan."
+    },
+    {
+      "id": "s25", "subjectId": "science",
+      "question": "Hewan yang berdarah dingin (poikilotermik) adalah ...",
+      "options": ["A. Kelinci", "B. Anjing", "C. Ikan", "D. Merpati"],
+      "answer": "C",
+      "explanation": "Ikan adalah hewan berdarah dingin yang suhu tubuhnya mengikuti suhu lingkungan. Hewan berdarah hangat seperti mamalia dan burung dapat mengatur suhu tubuhnya sendiri."
+    },
+    {
+      "id": "s26", "subjectId": "science",
+      "question": "Gas yang paling banyak di atmosfer bumi adalah ...",
+      "options": ["A. Oksigen", "B. Karbondioksida", "C. Nitrogen", "D. Hidrogen"],
+      "answer": "C",
+      "explanation": "Nitrogen (N₂) menyusun sekitar 78% atmosfer bumi, diikuti oksigen 21%, dan gas-gas lain sekitar 1%."
+    },
+    {
+      "id": "s27", "subjectId": "science",
+      "question": "Tulang yang melindungi otak adalah ...",
+      "options": ["A. Tulang rusuk", "B. Tulang belakang", "C. Tulang tengkorak", "D. Tulang dada"],
+      "answer": "C",
+      "explanation": "Tulang tengkorak (kranium) adalah pelindung otak yang keras. Terdiri dari beberapa tulang yang menyatu membentuk kotak pelindung otak."
+    },
+    {
+      "id": "s28", "subjectId": "science",
+      "question": "Simbiosis antara lebah dan bunga merupakan contoh simbiosis ...",
+      "options": ["A. Parasitisme", "B. Komensalisme", "C. Mutualisme", "D. Amensalisme"],
+      "answer": "C",
+      "explanation": "Mutualisme adalah hubungan simbiosis yang menguntungkan kedua pihak. Lebah mendapat nektar, bunga terbantu dalam penyerbukan."
+    },
+    {
+      "id": "s29", "subjectId": "science",
+      "question": "Planet yang dikelilingi cincin besar dan indah adalah ...",
+      "options": ["A. Jupiter", "B. Mars", "C. Saturnus", "D. Uranus"],
+      "answer": "C",
+      "explanation": "Saturnus terkenal dengan cincin-cincinnya yang indah dan terlihat jelas. Cincin tersebut terbuat dari es dan debu batuan."
+    },
+    {
+      "id": "s30", "subjectId": "science",
+      "question": "Perubahan fisika adalah perubahan yang tidak menghasilkan zat baru, contohnya ...",
+      "options": [
+        "A. Kertas terbakar",
+        "B. Nasi menjadi basi",
+        "C. Es mencair",
+        "D. Besi berkarat"
+      ],
+      "answer": "C",
+      "explanation": "Es mencair adalah perubahan fisika karena hanya berubah wujud (padat → cair) namun tetap air (H₂O), tidak terbentuk zat baru."
+    },
+
+    {
+      "id": "bi1", "subjectId": "indonesian",
+      "question": "Kata yang memiliki makna sama atau hampir sama disebut ...",
+      "options": ["A. Antonim", "B. Sinonim", "C. Homonim", "D. Polisemi"],
+      "answer": "B",
+      "explanation": "Sinonim adalah kata yang memiliki makna sama atau mirip dengan kata lain. Contoh: senang = gembira = bahagia."
+    },
+    {
+      "id": "bi2", "subjectId": "indonesian",
+      "question": "Antonim dari kata 'rajin' adalah ...",
+      "options": ["A. Pintar", "B. Malas", "C. Cerdas", "D. Tekun"],
+      "answer": "B",
+      "explanation": "Antonim adalah kata yang bermakna berlawanan. Antonim dari 'rajin' (suka bekerja keras) adalah 'malas' (tidak suka bekerja)."
+    },
+    {
+      "id": "bi3", "subjectId": "indonesian",
+      "question": "Kalimat utama adalah kalimat yang mengandung ...",
+      "options": ["A. Kata sifat", "B. Kata kerja", "C. Gagasan pokok", "D. Kata hubung"],
+      "answer": "C",
+      "explanation": "Kalimat utama adalah kalimat yang mengandung gagasan pokok atau ide utama dari sebuah paragraf."
+    },
+    {
+      "id": "bi4", "subjectId": "indonesian",
+      "question": "Sinonim dari kata 'indah' adalah ...",
+      "options": ["A. Jelek", "B. Cantik", "C. Buruk", "D. Rusak"],
+      "answer": "B",
+      "explanation": "Sinonim dari 'indah' adalah 'cantik' atau 'elok'. Keduanya memiliki makna yang sama, yaitu menyenangkan untuk dilihat."
+    },
+    {
+      "id": "bi5", "subjectId": "indonesian",
+      "question": "Paragraf yang gagasan pokoknya terletak di awal paragraf disebut paragraf ...",
+      "options": ["A. Induktif", "B. Deduktif", "C. Campuran", "D. Naratif"],
+      "answer": "B",
+      "explanation": "Paragraf deduktif adalah paragraf yang kalimat utamanya berada di awal paragraf, diikuti kalimat-kalimat penjelas."
+    },
+    {
+      "id": "bi6", "subjectId": "indonesian",
+      "question": "Penulisan judul yang benar berdasarkan EYD adalah ...",
+      "options": [
+        "A. belajar bersama teman",
+        "B. BELAJAR BERSAMA TEMAN",
+        "C. Belajar Bersama Teman",
+        "D. bELAJAR bERSAMA tEMAN"
+      ],
+      "answer": "C",
+      "explanation": "Penulisan judul yang benar: setiap kata diawali huruf kapital, kecuali kata tugas (di, ke, dari, yang, dan, atau, dll) jika tidak di awal."
+    },
+    {
+      "id": "bi7", "subjectId": "indonesian",
+      "question": "Puisi yang terdiri dari 4 baris tiap bait dan bersajak a-b-a-b disebut ...",
+      "options": ["A. Pantun", "B. Syair", "C. Gurindam", "D. Soneta"],
+      "answer": "A",
+      "explanation": "Pantun memiliki ciri: 4 baris per bait, 2 baris sampiran dan 2 baris isi, bersajak a-b-a-b. Ini berbeda dengan syair yang bersajak a-a-a-a."
+    },
+    {
+      "id": "bi8", "subjectId": "indonesian",
+      "question": "Kalimat efektif adalah kalimat yang ...",
+      "options": [
+        "A. Sangat panjang dan detail",
+        "B. Menggunakan kata asing",
+        "C. Jelas, mudah dipahami, dan tidak bertele-tele",
+        "D. Menggunakan banyak kata sifat"
+      ],
+      "answer": "C",
+      "explanation": "Kalimat efektif adalah kalimat yang dapat menyampaikan pesan dengan jelas, tepat, dan tidak menggunakan kata-kata yang tidak perlu."
+    },
+    {
+      "id": "bi9", "subjectId": "indonesian",
+      "question": "Antonim dari 'maju' adalah ...",
+      "options": ["A. Muda", "B. Tua", "C. Mundur", "D. Lambat"],
+      "answer": "C",
+      "explanation": "Antonim dari 'maju' adalah 'mundur'. Keduanya menunjukkan arah yang berlawanan."
+    },
+    {
+      "id": "bi10", "subjectId": "indonesian",
+      "question": "Ide pokok paragraf adalah ...",
+      "options": [
+        "A. Kalimat pertama dalam paragraf",
+        "B. Inti dari keseluruhan isi paragraf",
+        "C. Kalimat terakhir dalam paragraf",
+        "D. Judul dari paragraf"
+      ],
+      "answer": "B",
+      "explanation": "Ide pokok adalah inti atau gagasan utama yang ingin disampaikan penulis dalam sebuah paragraf. Ide pokok bisa berada di awal, akhir, atau tengah paragraf."
+    },
+    {
+      "id": "bi11", "subjectId": "indonesian",
+      "question": "Kata baku dari 'nasehat' adalah ...",
+      "options": ["A. Nasihat", "B. Nasehat", "C. Naseihat", "D. Nazihat"],
+      "answer": "A",
+      "explanation": "Kata baku yang benar adalah 'nasihat', bukan 'nasehat'. Penulisan mengikuti KBBI (Kamus Besar Bahasa Indonesia)."
+    },
+    {
+      "id": "bi12", "subjectId": "indonesian",
+      "question": "Jenis paragraf berdasarkan isinya yang menceritakan sebuah kejadian secara urut disebut paragraf ...",
+      "options": ["A. Deskripsi", "B. Argumentasi", "C. Narasi", "D. Eksposisi"],
+      "answer": "C",
+      "explanation": "Paragraf narasi adalah paragraf yang menceritakan suatu kejadian atau peristiwa secara berurutan berdasarkan waktu."
+    },
+    {
+      "id": "bi13", "subjectId": "indonesian",
+      "question": "Penggunaan huruf kapital yang benar adalah pada ...",
+      "options": [
+        "A. Nama bulan dan hari",
+        "B. Nama benda",
+        "C. Kata sifat",
+        "D. Kata kerja"
+      ],
+      "answer": "A",
+      "explanation": "Huruf kapital digunakan untuk nama bulan (Januari, Februari), nama hari (Senin, Selasa), nama orang, nama tempat, dan awal kalimat."
+    },
+    {
+      "id": "bi14", "subjectId": "indonesian",
+      "question": "Sinonim dari kata 'cerdas' adalah ...",
+      "options": ["A. Bodoh", "B. Pandai", "C. Lurus", "D. Tinggi"],
+      "answer": "B",
+      "explanation": "Sinonim dari 'cerdas' adalah 'pandai', 'pintar', atau 'cerdik'. Keduanya menunjukkan kemampuan berpikir yang baik."
+    },
+    {
+      "id": "bi15", "subjectId": "indonesian",
+      "question": "Dalam sebuah pantun, dua baris pertama disebut ...",
+      "options": ["A. Isi", "B. Sajak", "C. Sampiran", "D. Rima"],
+      "answer": "C",
+      "explanation": "Pantun terdiri dari 4 baris: baris 1-2 adalah sampiran (pengantar) dan baris 3-4 adalah isi (pesan yang ingin disampaikan)."
+    },
+    {
+      "id": "bi16", "subjectId": "indonesian",
+      "question": "Kalimat 'Anak-anak bermain di lapangan dengan gembira' merupakan kalimat ...",
+      "options": ["A. Majemuk", "B. Tunggal", "C. Berita", "D. Tanya"],
+      "answer": "B",
+      "explanation": "Kalimat tunggal adalah kalimat yang memiliki satu pola kalimat (satu subjek dan satu predikat), tidak menggunakan konjungsi penghubung klausa."
+    },
+    {
+      "id": "bi17", "subjectId": "indonesian",
+      "question": "Antonim dari kata 'terang' adalah ...",
+      "options": ["A. Cerah", "B. Bersinar", "C. Gelap", "D. Bercahaya"],
+      "answer": "C",
+      "explanation": "Antonim dari 'terang' adalah 'gelap'. Terang berarti banyak cahaya, gelap berarti tidak ada atau sedikit cahaya."
+    },
+    {
+      "id": "bi18", "subjectId": "indonesian",
+      "question": "Bacalah paragraf berikut: 'Buku adalah jendela dunia. Dengan membaca buku, kita dapat menambah ilmu pengetahuan. Buku juga melatih kemampuan berpikir kita.' Ide pokok paragraf tersebut adalah ...",
+      "options": [
+        "A. Kita harus membeli banyak buku",
+        "B. Buku adalah jendela dunia",
+        "C. Membaca buku sulit",
+        "D. Buku melatih kemampuan menulis"
+      ],
+      "answer": "B",
+      "explanation": "Ide pokok paragraf tersebut adalah 'Buku adalah jendela dunia', yang merupakan kalimat utama di awal paragraf dan didukung oleh kalimat-kalimat selanjutnya."
+    },
+    {
+      "id": "bi19", "subjectId": "indonesian",
+      "question": "Kata yang tidak baku dari pilihan berikut adalah ...",
+      "options": ["A. Apotek", "B. Aktif", "C. Ijin", "D. Izin"],
+      "answer": "C",
+      "explanation": "Kata 'ijin' adalah tidak baku. Penulisan baku yang benar adalah 'izin' sesuai KBBI."
+    },
+    {
+      "id": "bi20", "subjectId": "indonesian",
+      "question": "Tanda baca yang digunakan untuk mengakhiri kalimat tanya adalah ...",
+      "options": ["A. Titik (.)", "B. Koma (,)", "C. Tanda seru (!)", "D. Tanda tanya (?)"],
+      "answer": "D",
+      "explanation": "Tanda tanya (?) digunakan untuk mengakhiri kalimat tanya. Contoh: 'Siapa namamu?' atau 'Di mana kamu tinggal?'"
+    },
+    {
+      "id": "bi21", "subjectId": "indonesian",
+      "question": "Jenis kata yang menyatakan nama orang, tempat, atau benda tertentu disebut kata ...",
+      "options": ["A. Kerja", "B. Sifat", "C. Benda", "D. Keterangan"],
+      "answer": "C",
+      "explanation": "Kata benda (nomina) adalah kata yang mengacu pada orang, benda, tempat, atau konsep. Contoh: meja, Jakarta, Budi, kebaikan."
+    },
+    {
+      "id": "bi22", "subjectId": "indonesian",
+      "question": "Kalimat 'Tolong tutup pintu itu!' merupakan jenis kalimat ...",
+      "options": ["A. Berita", "B. Tanya", "C. Perintah", "D. Seru"],
+      "answer": "C",
+      "explanation": "Kalimat perintah adalah kalimat yang berisi permintaan atau perintah untuk melakukan sesuatu, biasanya diakhiri tanda seru (!)."
+    },
+    {
+      "id": "bi23", "subjectId": "indonesian",
+      "question": "Sinonim dari kata 'segera' adalah ...",
+      "options": ["A. Lambat", "B. Lama", "C. Sebentar", "D. Lekas"],
+      "answer": "D",
+      "explanation": "Sinonim dari 'segera' adalah 'lekas', 'cepat', atau 'sesegera mungkin'. Keduanya berarti dalam waktu singkat."
+    },
+    {
+      "id": "bi24", "subjectId": "indonesian",
+      "question": "Penggunaan kata 'di' yang benar sebagai kata depan adalah ...",
+      "options": [
+        "A. Adik di-makan nasi",
+        "B. Buku itu di tulis oleh Pak Guru",
+        "C. Kami bermain di lapangan",
+        "D. Surat itu di kirimkan kemarin"
+      ],
+      "answer": "C",
+      "explanation": "'Di' sebagai kata depan (preposisi) menunjukkan tempat, ditulis terpisah dari kata berikutnya. Contoh: di lapangan, di sekolah, di rumah."
+    },
+    {
+      "id": "bi25", "subjectId": "indonesian",
+      "question": "Majas yang membandingkan dua hal menggunakan kata 'seperti' atau 'bagaikan' disebut ...",
+      "options": ["A. Metafora", "B. Personifikasi", "C. Simile", "D. Hiperbola"],
+      "answer": "C",
+      "explanation": "Simile (perumpamaan) adalah majas yang membandingkan dua hal secara eksplisit menggunakan kata pembanding seperti, bagaikan, laksana, bak."
+    },
+    {
+      "id": "bi26", "subjectId": "indonesian",
+      "question": "Antonim dari kata 'murah' adalah ...",
+      "options": ["A. Hemat", "B. Sederhana", "C. Mahal", "D. Terjangkau"],
+      "answer": "C",
+      "explanation": "Antonim dari 'murah' (harga rendah) adalah 'mahal' (harga tinggi). Keduanya menunjukkan tingkat harga yang berlawanan."
+    },
+    {
+      "id": "bi27", "subjectId": "indonesian",
+      "question": "Dalam membaca pemahaman, langkah pertama yang harus dilakukan adalah ...",
+      "options": [
+        "A. Mencatat semua kata sulit",
+        "B. Membaca judul dan memahami isi teks",
+        "C. Membuat ringkasan",
+        "D. Menjawab pertanyaan"
+      ],
+      "answer": "B",
+      "explanation": "Langkah pertama dalam membaca pemahaman adalah membaca secara keseluruhan untuk memahami isi teks, termasuk memperhatikan judul sebagai gambaran isi."
+    },
+    {
+      "id": "bi28", "subjectId": "indonesian",
+      "question": "Kata ulang 'sayur-mayur' merupakan contoh kata ulang ...",
+      "options": ["A. Murni", "B. Berubah bunyi", "C. Sebagian", "D. Berimbuhan"],
+      "answer": "B",
+      "explanation": "Kata ulang berubah bunyi adalah pengulangan kata dengan perubahan fonem. Contoh: sayur-mayur, serba-serbi, warna-warni."
+    },
+    {
+      "id": "bi29", "subjectId": "indonesian",
+      "question": "Kalimat manakah yang menggunakan tanda koma dengan benar?",
+      "options": [
+        "A. Aku, kamu dan dia pergi bersama.",
+        "B. Pada hari Senin, kami mengadakan upacara.",
+        "C. Ibu membeli, sayur dan buah di pasar.",
+        "D. Dia berlari, kemudian berhenti."
+      ],
+      "answer": "B",
+      "explanation": "Koma digunakan setelah kata keterangan waktu/tempat di awal kalimat. 'Pada hari Senin,' sudah benar penulisannya."
+    },
+    {
+      "id": "bi30", "subjectId": "indonesian",
+      "question": "Sinonim dari kata 'berani' adalah ...",
+      "options": ["A. Takut", "B. Pengecut", "C. Pemberani", "D. Gugup"],
+      "answer": "C",
+      "explanation": "Sinonim dari 'berani' adalah 'pemberani', 'gagah berani', atau 'tidak takut'. Kata-kata ini memiliki makna yang sama atau hampir sama."
+    }
+  ]
+}
